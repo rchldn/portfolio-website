@@ -4,12 +4,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover the services SaaS Solutions can offer." />
-  <title>Our Services - SaaS Solutions</title>
+  <meta name="description" content="Professional website for developer Rachel Dean." />
+  <title>Rachel Dean</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#main">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="nav-icons">
+        <li><a href="https://x.com/rachmakesmusic"><img src="assets/twitter-brands-solid.png"></a></li>
+        <li><a href="https://instagram.com/rachmakesmusic"><img src="assets/instagram-brands-solid.png"></a></li>
+        <li><a href="https://github.com/rchldn"><img src="assets/github-brands-solid.png"></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="intro">
+      <h1 id="main title">Rachel Dean</h1>
+      <h2>Developer ∙ Storyteller ∙ Gatherer</h2>
+      <img src="assets/Rachel Dean (1).jpg">
+    </section>
+  </main>
+  <section id="projects">
+    <h1>Projects</h1><br>
+    <div class="articles-section">
+      <article>
+        <h2><a href="https://www.racheldeanmusic.com/">Past</a></h2>
+        <img src="assets/profile_pic.jpg">
+        <p>I come from a life as a pianist, composer, and music director, striving to execute shared visions and
+          to inspire.</p>
+        <p class="photo-credit">Photo credit: <a href="https://www.spencerimbrockphotography.com/">Spencer Imbrock
+            Photography</a>
+        </p>
+      </article>
+      <article>
+        <h2><a href="https://www.instagram.com/astoriaswing/">Present</a></h2>
+        <img src="assets/Astoria Swing.png">
+        <p>I co-host a monthly swing dancing event in Astoria.</p>
+        <p class="photo-credit">Image credit: <a href="https://www.instagram.com/astoriaswing/">Ian LeRoy</a></p>
+      </article>
+      <article>
+        <h2>Future</h2>
+        <img src="assets/anxiety project photo.jpg">
+        <p>I'm co-developing a Musicians' Directory, where musicians can vouch for each other and contractors
+          can find the
+          exact skill sets and personalities they need.</p><br>
+        <p class="photo-credit">Photo credit: <a href="https://www.easterlingstudios.com/"> Easterling Studios</a></p>
+
+      </article>
+    </div>
+  </section>
+  <contact id="contact">
+    <h1>Get in Touch</h1>
+    <form action="mailto:rchldn@gmail.com" method="POST">
+      <label for="first-name">First name:</label>
+      <input type="text" id="first-name" name="first-name" required>
+      <label for="last-name">Last name:</label>
+      <input type="text" id="last-name" name="last-name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <input type="textarea" id="message" name="message" required>
+      <button type="submit">Submit</button> <!--trying to get this to be a bigger text field, is there a way?-->
+    </form>
+  </contact>
+  <footer>
+  </footer>
+  </main>
 
 </body>
-<html
+
+</html>
