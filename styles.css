@@ -5,15 +5,62 @@
   box-sizing: border-box;
 }
 
+.shadows-into-light-regular {
+  font-family: 'Shadows Into Light', system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.abeezee-regular {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.abeezee-regular-italic {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
 /* Body Styles */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  /*  font-family: 'Helvetica Neue', Arial, sans-serif; */
   line-height: 1.6;
   color: #222;
+
   background-image: linear-gradient(
     rgb(165, 244, 244),
     rgba(52, 119, 186, 0.726)
   );
+}
+
+h1 {
+  font-family: 'Shadows Into Light';
+  font-size: 6em;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Shadows Into Light';
+  font-size: 3em;
+  font-weight: bold;
+  padding: 10px;
+}
+
+h3 {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 2em;
+}
+
+h4 {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 2em;
+}
+
+p {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1em;
 }
 
 /* Nav bar Styles */
@@ -23,6 +70,9 @@ nav {
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.71);
   border-radius: 0px 0px 10px 10px;
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 .nav-links {
@@ -38,6 +88,7 @@ nav {
 .nav-icons {
   list-style-type: none;
   display: flex;
+  margin-top: 5px;
 }
 
 .nav-icons li {
@@ -50,16 +101,33 @@ nav {
 }
 
 /* Main Styles */
-main img {
+#intro {
+  padding: 10px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: 3em;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+#intro img {
   max-width: 50%;
-  border-radius: 10px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 3em;
 }
 /* Article Styles */
 .articles-section {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: space-between;
   margin: 0px 10px 0px 10px;
 }
 article {
