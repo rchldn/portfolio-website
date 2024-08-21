@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* Importing Google fonts */
 .shadows-into-light-regular {
   font-family: 'Shadows Into Light', system-ui;
   font-weight: 400;
@@ -28,6 +28,7 @@ body {
   /*  font-family: 'Helvetica Neue', Arial, sans-serif; */
   line-height: 1.6;
   color: #222;
+  overflow-x: hidden;
 
   background-image: linear-gradient(
     rgb(165, 244, 244),
@@ -37,20 +38,26 @@ body {
 
 h1 {
   font-family: 'Shadows Into Light';
-  font-size: 6em;
+  font-size: 9vw;
   font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-left: 9vw;
+  white-space: wrap;
+  display: inline-block; /* this might mess everything up, please come back and check it */
 }
-
 h2 {
   font-family: 'Shadows Into Light';
-  font-size: 3em;
+  font-size: 6vw;
   font-weight: bold;
+  /* play around with padding using relative units */
   padding: 10px;
 }
 
 h3 {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 2em;
+  font-size: 3.5vw;
 }
 
 h4 {
@@ -73,6 +80,7 @@ nav {
   font-family: 'ABeeZee', sans-serif;
   font-weight: bold;
   font-size: 1em;
+  overflow: hidden;
 }
 
 .nav-links {
@@ -81,8 +89,16 @@ nav {
   display: flex;
 }
 
+.nav-links li:hover {
+  /* play around color! */
+  background-color: rgb(180, 231, 202);
+  transition: 0.5s;
+}
+
 .nav-links a {
   padding: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .nav-icons {
@@ -100,40 +116,54 @@ nav {
   align-items: center;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 /* Main Styles */
 #intro {
   padding: 10px;
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  margin-top: 3em;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: center;
 }
 
+/* do I need this anymore? 
 .text-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   white-space: nowrap;
-}
+}*/
 
-#intro img {
-  max-width: 50%;
+#profile-pic {
+  max-width: 75%;
   height: auto;
-  border-radius: 50%;
-  margin-right: 3em;
+  margin-right: -50px;
 }
 /* Article Styles */
 .articles-section {
   display: flex;
+  /* make relative */
   gap: 20px;
   flex-wrap: wrap;
   align-items: space-between;
+  /* make relative */
   margin: 0px 10px 0px 10px;
 }
 article {
+  /* make relative */
   border-radius: 10px;
-  background-color: rgba(200, 246, 246, 0.675);
+  background-color: rgba(200, 246, 246, 0.422);
+  /* make relative? I'm not sure if necessary! */
   flex: 1 1 calc(33.333% - 20px);
+  /* make relative */
   padding: 10px;
   box-sizing: border-box;
   max-width: 100%;
@@ -143,15 +173,141 @@ article {
 article img {
   max-width: 100%;
   height: auto;
+  /* make relative */
   border-radius: 10px;
 }
 
 article p {
-  font-size: 0.9em;
+  font-size: 1.75vw;
+  margin-top: 10px;
+  /*font-family: 'Helvetica Neue', Arial, sans-serif;*/
 }
 
 .photo-credit {
   font-size: 0.5em;
-  display: flex;
   margin-top: auto;
+}
+
+.photo-credit #extra-credit {
+  margin-top: none;
+}
+/* styles for the video hover over */
+.past-media {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+#past-image {
+  position: relative;
+  display: inline-block;
+}
+
+#past-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 1s;
+}
+
+#past-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+/*.past-media #past-image:hover {
+  display: none;
+}*/
+
+.past-media:hover #past-video {
+  display: block;
+  opacity: 1;
+}
+
+/*.past-media:hover #piano-picture {
+  transition: 1s;
+}*/
+
+#past-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/*#past-image:hover {
+  /*content: url(assets/rd-web-background-cropped.mp4);
+  /* transition: all 400ms ease; 
+}*/
+
+/* #past-image:hover #past-video {
+  display: block;
+} */
+
+label {
+  /* make relative */
+
+  margin-left: 10px;
+  font-family: 'ABeeZee';
+}
+
+input {
+  border-radius: 5px;
+  display: flex;
+  margin-left: 10px;
+}
+
+textarea {
+  border-radius: 5px;
+  display: flex;
+  margin-left: 10px;
+  font-family: Arial;
+  border-style: solid;
+  resize: none;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+
+button {
+  margin-left: 10px;
+  padding: 4px;
+  border-radius: 5px;
+  font-family: 'ABeeZee';
+}
+
+#message {
+  padding: 10px;
+  text-wrap: wrap;
+}
+
+/*link states*/
+a:before {
+  color: rgba(22, 22, 127, 0.603);
+}
+
+a:visited {
+  color: rgba(13, 103, 13, 0.912);
+}
+
+a:hover {
+  color: purple;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*footer styles*/
+footer {
+  font-size: 0.7em;
+  text-align: center;
+  padding: 10px;
 }

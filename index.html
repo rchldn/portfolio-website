@@ -7,6 +7,7 @@
   <meta name="description" content="Professional website for developer Rachel Dean." />
   <title>Rachel Dean</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/icons8-developer-16.png" type="image/png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
   </style>
@@ -18,10 +19,9 @@
 <body>
   <main>
     <header>
-      <nav>
+      <nav id="navbar">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
-          <li><a href="#main">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -34,40 +34,53 @@
         </ul>
       </nav>
     </header>
-
-
     <section id="intro">
-      <div class="text-container">
-        <h1 id="main-title">Rachel Dean</h1>
-        <h4>Developer ∙ Storyteller ∙ Gatherer</h4>
-      </div>
-      <img id="profile-pic" src="assets/Rachel Dean Hollins headshot square.jpeg">
+      <h1 id="main-title">Rachel Dean</h1>
+      <img id="profile-pic" src="assets/Rachel headshot with text (1).png" alt="Rachel's_Headshot">
     </section><br><br>
+    <!--add an "about" section?-->
     <section id="projects">
       <h2>Projects</h2><br>
       <div class="articles-section">
-        <article>
-          <h3><a href="https://www.racheldeanmusic.com/">Past</a></h3>
-          <img src="assets/profile_pic.jpg">
+        <article class="past-media">
+          <h3><a href="https://www.racheldeanmusic.com/" target="_blank">Past</a></h3>
+          <div id="past-image">
+            <img id="piano-picture" src="assets/profile_pic.jpg" alt="Rachel at the piano">
+            <div id="past-video">
+              <a href="https://racheldeanmusic.com" target="_blank"><video autoplay loop>
+                  <source src="assets/rd-web-background-cropped.mp4" type="video/mp4">
+                </video></a>
+            </div>
+            <!-- <video id="past-video" preload="none">
+              <source src="assets/rd-web-background-cropped.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>-->
+          </div>
           <p>I come from a life as a pianist, composer, and music director, striving to execute shared visions and
             to inspire.</p>
-          <p class="photo-credit">Photo credit: <a href="https://www.spencerimbrockphotography.com/">Spencer Imbrock
-              Photography</a>
+          <p class="photo-credit">Photo: <a href="https://www.spencerimbrockphotography.com/" target="_blank">Spencer
+              Imbrock
+              Photography</a><br>
+            Video: <a href="http://endlessecho.net/" target="_blank">Endless
+              Echo</a>
           </p>
         </article>
         <article>
-          <h3><a href="https://www.instagram.com/astoriaswing/">Present</a></h3>
-          <img src="assets/Astoria Swing.png">
+          <h3><a href="https://www.instagram.com/astoriaswing/" target="_blank">Present</a></h3>
+          <img src="assets/Astoria Swing.png"
+            alt="graphic advertising an Astoria Swing event with a cartoon of a dancing couple">
           <p>I co-host a monthly swing dancing event in Astoria.</p>
-          <p class="photo-credit">Image credit: <a href="https://www.instagram.com/astoriaswing/">Ian LeRoy</a></p>
+          <p class="photo-credit">Image: <a href="https://www.instagram.com/astoriaswing/" target="_blank">Ian
+              LeRoy</a></p>
         </article>
         <article>
           <h3>Future</h3>
-          <img src="assets/anxiety project photo.jpg">
+          <img src="assets/anxiety project photo.jpg" alt="picture of musicians and singers">
           <p>I'm co-developing a Musicians' Directory, where musicians can vouch for each other and contractors
             can find the
             exact skill sets and personalities they need.</p><br>
-          <p class="photo-credit">Photo credit: <a href="https://www.easterlingstudios.com/"> Easterling Studios</a></p>
+          <p class="photo-credit">Photo: <a href="https://www.easterlingstudios.com/" target="_blank"> Easterling
+              Studios</a></p>
 
         </article>
       </div>
@@ -76,20 +89,40 @@
       <h2>Get in Touch</h2>
       <form action="mailto:rchldn@gmail.com" method="POST">
         <label for="first-name">First name:</label>
-        <input type="text" id="first-name" name="first-name" required><br>
+        <input type="text" id="first-name" name="first-name" required>
         <label for="last-name">Last name:</label>
-        <input type="text" id="last-name" name="last-name" required><br>
+        <input type="text" id="last-name" name="last-name" required>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" required>
         <label for="message">Message:</label>
-        <input type="textarea" id="message" name="message" required>
-        <button type="submit">Submit</button> <!--trying to get this to be a bigger text field, is there a way?-->
-      </form>
+        <textarea rows="5" cols="60" id="message" name="message" required></textarea><br>
+        <!--<input type="textarea" id="message" name="message"
+          required>-->
+        <!--trying to get this to be a bigger text field, is there a way? textarea tag??-->
+        <button type="submit">Submit</button>
+      </form><br>
     </contact>
   </main>
   <footer>
+    <p>Copyright © 2024 Rachel Dean</p>
+    <p><a target="_blank" href="https://icons8.com/icon/55455/developer">Developer</a> icon by <a target="_blank"
+        href="https://icons8.com">Icons8</a></p>
   </footer>
+  <script>
+    window.onscroll = function () { myFunction() };
 
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.scrollY >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+  <!-- <script src="index.js"></script>-->
 </body>
 
 </html>
