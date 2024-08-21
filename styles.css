@@ -241,6 +241,106 @@ article p {
   border-radius: 10px;
 }
 
+/* styles for the present video hover over */
+.present-media {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+#present-image {
+  position: relative;
+  display: inline-block;
+}
+
+#present-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 1s;
+}
+
+#present-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+/*.present-media #present-image:hover {
+  display: none;
+}*/
+
+.present-media:hover #present-video {
+  display: block;
+  opacity: 1;
+}
+
+/*.present-media:hover #piano-picture {
+  transition: 1s;
+}*/
+
+#present-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* styles for the future video hover over */
+.future-media {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+#future-image {
+  position: relative;
+  display: inline-block;
+}
+
+#future-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 1s;
+}
+
+#future-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+/*.future-media #future-image:hover {
+  display: none;
+}*/
+
+.future-media:hover #future-video {
+  display: block;
+  opacity: 1;
+}
+
+/*.future-media:hover #piano-picture {
+  transition: 1s;
+}*/
+
+#future-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 /*#past-image:hover {
   /*content: url(assets/rd-web-background-cropped.mp4);
   /* transition: all 400ms ease; 
