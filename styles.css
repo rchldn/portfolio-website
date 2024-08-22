@@ -24,6 +24,10 @@
 }
 
 /* Body Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /*  font-family: 'Helvetica Neue', Arial, sans-serif; */
   line-height: 1.6;
@@ -58,6 +62,7 @@ h2 {
 h3 {
   font-family: 'ABeeZee', sans-serif;
   font-size: 3.5vw;
+  color: purple;
 }
 
 h4 {
@@ -90,7 +95,6 @@ nav {
 }
 
 .nav-links li:hover {
-  /* play around color! */
   background-color: rgb(180, 231, 202);
   transition: 0.5s;
 }
@@ -147,6 +151,7 @@ nav {
   height: auto;
   margin-right: -50px;
 }
+
 /* Article Styles */
 .articles-section {
   display: flex;
@@ -191,6 +196,7 @@ article p {
 .photo-credit #extra-credit {
   margin-top: none;
 }
+
 /* styles for the video hover over */
 .past-media {
   position: relative;
@@ -207,7 +213,7 @@ article p {
   display: block;
   width: 100%;
   height: auto;
-  transition: 1s;
+  transition: opacity 1s;
 }
 
 #past-video {
@@ -218,7 +224,6 @@ article p {
   height: 100%;
   display: none;
   opacity: 0;
-  transition: 1s;
 }
 
 /*.past-media #past-image:hover {
@@ -228,6 +233,24 @@ article p {
 .past-media:hover #past-video {
   display: block;
   opacity: 1;
+  animation: fadeInFromNone 1s ease-out;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }
 
 /*.past-media:hover #piano-picture {
@@ -239,6 +262,7 @@ article p {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.5s;
 }
 
 /* styles for the present video hover over */
@@ -257,7 +281,7 @@ article p {
   display: block;
   width: 100%;
   height: auto;
-  transition: 1s;
+  transition: opacity 1s;
 }
 
 #present-video {
@@ -268,7 +292,6 @@ article p {
   height: 100%;
   display: none;
   opacity: 0;
-  transition: 1s;
 }
 
 /*.present-media #present-image:hover {
@@ -278,6 +301,7 @@ article p {
 .present-media:hover #present-video {
   display: block;
   opacity: 1;
+  animation: fadeInFromNone 1s ease-out;
 }
 
 /*.present-media:hover #piano-picture {
@@ -307,7 +331,7 @@ article p {
   display: block;
   width: 100%;
   height: auto;
-  transition: 1s;
+  transition: opacity 1s;
 }
 
 #future-video {
@@ -318,7 +342,6 @@ article p {
   height: 100%;
   display: none;
   opacity: 0;
-  transition: 1s;
 }
 
 /*.future-media #future-image:hover {
@@ -328,6 +351,7 @@ article p {
 .future-media:hover #future-video {
   display: block;
   opacity: 1;
+  animation: fadeInFromNone 1s ease-out;
 }
 
 /*.future-media:hover #piano-picture {
@@ -361,19 +385,23 @@ input {
   border-radius: 5px;
   display: flex;
   margin-left: 10px;
+  background-color: rgb(200, 246, 246);
+  border-color: 20px rgba(200, 246, 246, 0.848);*/
 }
 
 textarea {
   border-radius: 5px;
-  display: flex;
   margin-left: 10px;
   font-family: Arial;
   border-style: solid;
-  resize: none;
   border-top: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid gray;
   border-bottom: 2px solid gray;
+  resize: none;
+  width: 50%;
+  min-width: 14px;
+  background-color: rgb(200, 246, 246);
 }
 
 button {
@@ -381,12 +409,23 @@ button {
   padding: 4px;
   border-radius: 5px;
   font-family: 'ABeeZee';
+  background-color:  rgba(200, 246, 246, 0.663)
+}
+
+button:hover {
+  transition: 0.5s;
+  background-color: rgb(168, 241, 191);
 }
 
 #message {
-  padding: 10px;
   text-wrap: wrap;
 }
+
+/* form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+} */
 
 /*link states*/
 a:before {
@@ -410,4 +449,75 @@ footer {
   font-size: 0.7em;
   text-align: center;
   padding: 10px;
+}
+
+/*media queries*/
+
+@media screen and (max-width: 562px) {
+  h2 {
+    font-size: 10vw;
+    text-align: center;
+  }
+
+  #navbar {
+    width: 100vw;
+  }
+
+  .nav-links {
+    display: inline;
+    font-size: 10px;
+  }
+
+  .nav-icons img {
+    max-width: 6vw;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #intro {
+    padding-top: 70px;
+    flex-direction: column;
+    margin-bottom: -50px;
+  }
+
+  h1 {
+    font-size: 20vw;
+    text-align: center;
+    margin-right: 20px;
+  }
+
+  #profile-pic {
+    min-width: 100vw;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .articles-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article p {
+    font-size: 4vw;
+  }
+
+  h3 {
+    font-size: 6vw;
+  }
+
+  .photo-credit {
+    font-size: 2vw;
+    margin-top: none;
+  }
+
+  .past-media,
+  .present-media,
+  .future-media {
+    max-width: 75%;
+  }
+
+  form {
+    font-size: 5vw;
+  }
 }
